@@ -1,0 +1,32 @@
+<canvas width="600"  height="400"></canvas>
+
+<script>
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function exibeAlerta(evento) {
+
+        alert('Cliquei');
+        console.log(evento);
+
+    }
+    //Lembrando que não podemos utilizar os parênteses apos a funcao exibeAlerta , assim executaríamos a função automaticamente, em vez de guardá-la na variavel tela para ser executada ao clique(.onclick)
+    
+    tela.onclick = exibeAlerta;
+
+
+/* 
+   Isso fará com que tenhamos acesso a este parâmetro passado pelo navegador, e assim poderemos descobrir a posição exata do clique.
+
+Após recarregarmos o programa, clicaremos na tela, onde será exibido o alerta. Em seguida, abriremos o console - utilizando o atalho "F12" -, e teremos o MouseEvent, com todos os detalhes do evento.
+
+O nome do parâmetro que nós passamos poderia ser qualquer um, o importante é haver um parâmetro.
+
+Se expandirmos o MouseEvent, clicando na seta antes de seu nome, há diversos detalhes sobre ele, inclusive a posição do mouse dentro do <canvas>.  
+
+*/
+
+</script>

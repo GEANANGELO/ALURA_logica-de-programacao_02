@@ -1,0 +1,16 @@
+<canvas width="600" height="400"></canvas>
+<script>
+	var tela = document.querySelector('canvas');
+	
+	var pincel = tela.getContext('2d');  //pede pra tela. o tipo de pincel no caso getContext('2d')
+
+	pincel.fillStyle = 'lightblue';   // preencha cor, atributo fillStyle
+	
+	pincel.fillRect(0, 0, 600, 400);   // preencha um retangulo os zeros sao x e y ....width="600" height="400"
+
+	pincel.fillStyle = 'orange';
+	pincel.fillRect(0, 0, 200, 400);
+
+	pincel.fillStyle = 'purple';
+	pincel.fillRect(400, 0, 200, 400); 
+</script>

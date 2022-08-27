@@ -1,0 +1,48 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    function desenhaCirculo(x, y, raio) {
+
+        pincel.fillStyle = 'blue';
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+        function limpaTela() {
+
+            pincel.clearRect(0, 0, 600, 400);
+                    //pincel.clearRect(), o que indicará ao JS que ele deve limpar o retângulo
+
+        }
+
+       /* for(var x = 20; x < 600; x++) {
+            limpaTela();
+            desenhaCirculo(x, 20, 10);
+
+        }  */
+
+        var x = 20;
+         function atualizatela() {
+            limpaTela();
+            desenhaCirculo(x,20,10);
+            x = x + 1      //x++
+         }  
+
+         //utilizaremos a função setInterval. Ela aceita receber, como parâmetro, a função que você deseja chamar e, depois, a quantidade de tempo que desejamos dar de intervalo em milissegundos.
+
+         setInterval(atualizatela, 10);
+
+</script>
+
+<p>Recapitulando:</p>
+
+<p>O método setInterval() chama atualizaTela();
+Este, quando executado, faz o limpaTela(), desenhaCirculo() e incrementa o valor de x;
+O setInterval() aguarda 20 milisegundos, para repetir o processo, sempre incrementando o valor de x, o que faz com que nossa esfera "se mova" para a direita.</p>

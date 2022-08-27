@@ -1,0 +1,31 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, cor) {
+
+        var tela = document.querySelector('canvas'); 
+        var pincel = tela.getContext('2d');
+            //é um dos parametros da função
+        pincel.fillStyle = cor;
+            // coordenadas da forma, x e y sao parâmetros da função
+        pincel.fillRect(x, y, 50, 50);  
+            // cor da borda     
+        pincel.fillStroke = 'black'; 
+            // bordas do tamanho do quadrado
+        pincel.strokeRect(x, y, 50, 50); 
+
+    
+}
+
+desenhaQuadrado(0, 0, 'green');
+desenhaQuadrado(50, 0, 'red');
+desenhaQuadrado(100, 0, 'yellow');
+
+//CASO QUEIR OS QUADRADOS UM ABAIXO DO OUTRO
+//desenhaQuadrado(0, 0, 'green');
+//desenhaQuadrado(0, 50, 'red');
+//desenhaQuadrado(0, 100'yellow');
+
+
+</script>
